@@ -17,7 +17,7 @@
       <h4>Link Berguna</h4>
       <ul>
         <li><a href="{{ route('home-user') }}">Beranda</a></li>
-        <li><a href="home-user#team">Tentang Kami</a></li>
+        <li><a href="home-user#about">Tentang Kami</a></li>
       </ul>
     </div>
 

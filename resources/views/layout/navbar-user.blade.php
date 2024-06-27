@@ -19,7 +19,7 @@
           <li><a href="home-user#latihan">Latihan</a></li>
           <li><a href="home-user#artikel">Artikel</a></li>
           <li><a href="home-user#feedback">Feedback</a></li>
-          <li><a href="home-user#team">Tentang Kami</a></li>
+          <li><a href="home-user#about">Tentang Kami</a></li>
           <li class="dropdown {{ Request::routeIs('profile-user') || Request::routeIs('profile-user.edit') ? 'active' : '' }}">
             <a href="#"><span>Akun Saya</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>

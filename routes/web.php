@@ -17,6 +17,14 @@ Route::get('/index', function () {
     return view('index');
 })->name('index');
 
+Route::get('/team', function () {
+    return view('team');
+})->name('team');
+
+Route::get('/tentangkami', function () {
+    return view('tentangkami');
+})->name('tentangkami');
+
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
 Route::middleware(['guest'])->group(function () {
@@ -59,12 +67,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/edit-user-profile', [ProfileController::class, 'updateUserProfile'])->name('profile-user.update');
 });
 
-Route::get('/team', function () {
-    return view('team');
-});
 
-Route::get('/tentangkami', function () {
-    return view('tentangkami');
-});
 
 Route::resource('latihan', LatihanController::class);

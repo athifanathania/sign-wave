@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sign Wave - Beranda</title>
+  <title>Sign Wave</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/signwave-no-text.png" rel="icon">
+  <link href="assets/img/Sign Wave-no-text.png" rel="icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="{{ route('index') }}" class="logo d-flex align-items-center">
-        <img src="assets/img/signwave-no-text.png" alt="">
+        <img src="assets/img/Sign Wave-no-text.png" alt="">
         <h1>Sign Wave<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
@@ -44,7 +44,7 @@
           <li><a href="index#kamus">Kamus</a></li>
           <li><a href="index#artikel">Artikel</a></li>
           <li><a href="index#feedback">Feedback</a></li>
-          <li><a href="index#team">Tentang Kami</a></li>
+          <li><a href="index#about">Tentang Kami</a></li>
           <li><a href="{{ route('login') }}"><span class="bi bi-box-arrow-in-right">&nbsp Masuk</span></a></li>
         </ul>
       </nav><!-- .navbar -->
@@ -150,6 +150,87 @@
       </div>
     </section><!-- End Feedback Section -->
 
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Tentang Kami</h2>
+                <p>Selamat datang di Sign Wave, sebuah platform yang didedikasikan untuk memperluas pemahaman dan keterampilan dalam bahasa isyarat dengan cara yang inovatif dan mengasyikkan. Kami berkomitmen untuk memberikan sumber daya yang bermanfaat bagi siapa pun yang ingin mempelajari bahasa isyarat.</p>
+            </div>
+
+            <div class="row gy-4">
+                <div class="col-lg-4 order-lg-2">
+                    <img src="{{ asset('assets/img/deaf-mute-people-concept-illustration.png') }}" class="img-fluid rounded-4 mb-4" alt="">
+                </div>
+                <h3>Sign Wave</h3>
+                <div class="col-lg-8 order-lg-2">
+                    <p>Bahasa isyarat adalah cara komunikasi yang indah dan kaya, digunakan oleh jutaan orang di seluruh dunia. Namun, akses terhadap materi pembelajaran yang efektif sering kali terbatas. Di Sign Wave, kami hadir untuk mengatasi tantangan ini dengan menyediakan berbagai alat dan sumber daya yang dirancang untuk memenuhi kebutuhan beragam pembelajar. Mulai dari gambar-gambar huruf dan angka hingga kata-kata sederhana, fitur-fitur interaktif kami didesain untuk membuat proses belajar bahasa isyarat menjadi lebih mudah dan menyenangkan.</p>
+                    <p>Sign Wave bukan sekadar alat pembelajaran, tetapi juga pusat informasi lengkap tentang bahasa isyarat. Kami menyediakan materi interaktif yang inovatif, artikel mendalam tentang sejarah dan evolusi bahasa isyarat, serta tips praktis untuk penggunaan sehari-hari. Selain itu, kami menyediakan kuis-kuis sederhana untuk memperkuat pemahaman tentang bahasa isyarat, memadukan teori dengan praktik secara efektif. Kami percaya bahwa setiap individu berhak mempelajari bahasa isyarat, dan kami siap mendukung perjalanan pembelajaran mereka dari berbagai latar belakang dan tingkat kemampuan. Bersama Sign Wave, mari kita terus memperkaya pemahaman dan menghargai keindahan bahasa isyarat, menciptakan dunia yang lebih inklusif dan penuh pengertian bagi semua.</p>
+                </div>
+                <div class="col-lg-12 order-3 content ps-0 ps-lg-5">
+                    <h3>Apa yang Kami Berikan:</h3>
+                    <ul>
+                        <li><i class="bi bi-check-circle-fill"></i> <h5>Materi Pembelajaran Interaktif</h5> <p>Sign Wave menyediakan berbagai gambar untuk huruf, angka, dan kata-kata sederhana dalam bahasa isyarat. Pengguna dapat belajar secara mandiri menggunakan alat pembelajaran yang intuitif dan interaktif. Fitur-fitur ini dirancang untuk memfasilitasi proses pembelajaran yang menyenangkan dan efektif.</p></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <h5>Artikel Terkait Bahasa Isyarat</h5> <p>Sign Wave menghadirkan artikel-artikel informatif dan inspiratif mengenai bahasa isyarat. Artikel-artikel ini tidak hanya memperluas pemahaman tentang sejarah, perkembangan, dan kepentingan bahasa isyarat tetapi juga memberikan wawasan yang mendalam tentang bagaimana bahasa ini berperan dalam komunikasi sehari-hari dan di berbagai komunitas.</p></li>
+                        <li><i class="bi bi-check-circle-fill"></i> <h5>Kuis Sederhana</h5> <p>Sign Wave menyediakan kuis-kuis sederhana yang dirancang khusus untuk menguji pengetahuan pengguna tentang bahasa isyarat. Tujuan dari kuis ini adalah untuk memperkuat pemahaman serta mengasah kemampuan pengguna dalam menerapkan bahasa isyarat dalam situasi berbeda.</p></li>
+                    </ul>
+                </div>
+                <p>Terima kasih telah mengakses Sign Wave! <br>Kami percaya bahwa dengan memahami dan menghargai keindahan bahasa isyarat, kita tidak hanya memperkaya pengalaman kita sendiri tetapi juga membuka pintu untuk inklusi yang lebih luas dan pemahaman yang lebih dalam tentang perbedaan. Dengan Sign Wave, kami berkomitmen untuk membangun sebuah dunia di mana setiap individu, tanpa memandang latar belakang atau kemampuan, dapat merasa didengar, dimengerti, dan dihargai. Mari bersama-sama menciptakan masyarakat yang lebih inklusif, harmonis, dan penuh pengertian.</p>
+            </div>
+        </div>
+
+    <!-- ======= Our Team Section ======= -->
+        <div class="container team" data-aos="fade-up" style="margin-top:100px;">
+            <div class="section-header">
+                <h2>Tim Kami</h2>
+                <p>Tim di balik Sign Wave terdiri dari sekelompok mahasiswa yang sangat berdedikasi dalam mengembangkan platform ini. Mereka membawa beragam keahlian dan semangat untuk memperluas akses dan pemahaman terhadap bahasa isyarat. Dengan komitmen mereka, Sign Wave tidak hanya menjadi alat pembelajaran, tetapi juga sebuah inisiatif untuk meningkatkan inklusi sosial dan penghargaan terhadap keberagaman komunikasi di seluruh dunia.</p>
+            </div>
+
+            <div class="row gy-4 justify-content-center">
+                <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member p-3">
+                        <img src="{{ asset('assets/img/dipa.png') }}" class="img-fluid" alt="">
+                        <h4>Anindya Diva Thalita</h4>
+                        <span>H1D022026</span>
+                        <div class="social">
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                            <a href=""><i class="bi bi-github"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member p-3">
+                        <img src="{{ asset('assets/img/tipa.JPG') }}" class="img-fluid" width=150>
+                        <h4>Athifa Nathania</h4>
+                        <span>H1D022031</span>
+                        <div class="social">
+                            <a href="https://www.instagram.com/athifanthn?igsh=NTNyMnNqc3B3Zm9p"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/athifanthn"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/athifanathania"><i class="bi bi-github"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="member p-3">
+                        <img src="{{ asset('assets/img/ebel.png') }}" class="img-fluid" alt="">
+                        <h4>Eka Belandini</h4>
+                        <span>H1D022002</span>
+                        <div class="social">
+                            <a href="https://www.instagram.com/belandiniekaa?igsh=MXN2Y2tuZ3k5bDhqYQ=="><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/belandiniekaa/"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/belandiniekaa"><i class="bi bi-github"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+            </div>
+        </div>
+    </section><!-- End About Us & team Section -->
+
+
   </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
@@ -163,15 +244,15 @@
         <br><br>
       </a>
       <a href="{{ route('index') }}">
-      <img src="assets/img/signwave-no-text.png" alt="Logo" style="display:block; margin: 25px;" width=20%;>
+      <img src="assets/img/Sign Wave-no-text.png" alt="Logo" style="display:block; margin: 25px;" width=20%;>
       </a>
     </div>
 
     <div class="col-lg-2 col-6 footer-links">
       <h4>Link Berguna</h4>
       <ul>
-        <li><a href="index">Beranda</a></li>
-        <li><a href="index#team">Tentang Kami</a></li>
+        <li><a href="{{ route('index') }}">Beranda</a></li>
+        <li><a href="index#about">Tentang Kami</a></li>
       </ul>
     </div>
 
