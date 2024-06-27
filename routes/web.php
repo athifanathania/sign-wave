@@ -6,6 +6,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LatihanController;
+
 
 Route::get('/', function () {
     return view('index');
@@ -55,4 +57,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile-user', [ProfileController::class, 'showUserProfile'])->name('profile-user');
     Route::get('/edit-user-profile', [ProfileController::class, 'editUserProfile'])->name('profile-user.edit');
     Route::put('/edit-user-profile', [ProfileController::class, 'updateUserProfile'])->name('profile-user.update');
+});
+
+Route::get('/team', function () {
+    return view('team');
+});
+
+Route::get('/tentangkami', function () {
+    return view('tentangkami');
 });
