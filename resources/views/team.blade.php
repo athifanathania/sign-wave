@@ -30,10 +30,10 @@
                         <h4>Athifa Nathania</h4>
                         <span>H1D022031</span>
                         <div class="social">
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                            <a href=""><i class="bi bi-github"></i></a>
+                            <a href="https://www.facebook.com/athifa.nathania/"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/athifanthn?igsh=NTNyMnNqc3B3Zm9p"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/athifanthn"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/athifanathania"><i class="bi bi-github"></i></a>
                         </div>
                     </div>
                 </div><!-- End Team Member -->
@@ -45,9 +45,9 @@
                         <span>H1D022002</span>
                         <div class="social">
                             <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                            <a href=""><i class="bi bi-github"></i></a>
+                            <a href="https://www.instagram.com/belandiniekaa?igsh=MXN2Y2tuZ3k5bDhqYQ=="><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/belandiniekaa/"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/belandiniekaa"><i class="bi bi-github"></i></a>
                         </div>
                     </div>
                 </div><!-- End Team Member -->

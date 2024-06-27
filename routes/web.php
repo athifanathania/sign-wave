@@ -66,3 +66,5 @@ Route::get('/team', function () {
 Route::get('/tentangkami', function () {
     return view('tentangkami');
 });
+
+Route::resource('latihan', LatihanController::class);
