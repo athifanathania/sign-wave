@@ -27,15 +27,18 @@ class UserController extends Controller
             'role' => 'required|in:admin,user',
         ]);
 
-        Akun::create([
+        $user = Akun::create([
             'username' => $request->username,
             'nama' => $request->nama,
             'password' => Hash::make($request->password),
             'role' => $request->role,
         ]);
 
+        $user->assignRole($request->role);
+
         return redirect()->route('index-kelola-user')->with('success', 'User berhasil ditambahkan!');
     }
+
 
     public function edit($username)
     {
@@ -53,11 +56,16 @@ class UserController extends Controller
 
         $user = Akun::where('username', $username)->firstOrFail();
         $user->nama = $request->nama;
+
         if ($request->filled('password')) {
             $user->password = Hash::make($request->password);
         }
+
         $user->role = $request->role;
         $user->save();
+
+        // Sync roles
+        $user->syncRoles($request->role);
 
         return redirect()->route('index-kelola-user')->with('success', 'User ' . $user->nama . ' berhasil diupdate!');
     }

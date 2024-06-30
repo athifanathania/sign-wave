@@ -7,7 +7,7 @@
     <h1>Daftar Latihan</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
             <li class="breadcrumb-item active">Latihan</li>
         </ol>
     </nav>
@@ -16,6 +16,18 @@
 <section class="section">
     <div class="row">
         <div class="col-lg-12">
+            @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                  {{ session('success') }}
+                </div>
+                <script>
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: '{{ session('success') }}'
+                  });
+                </script>
+              @endif
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Daftar Latihan</h5>

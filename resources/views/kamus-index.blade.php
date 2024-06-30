@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/signwave-no-text.png" rel="icon">
+  <link href="assets/img/signwave-user.png" rel="icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="{{ route('index') }}" class="logo d-flex align-items-center">
-        <img src="assets/img/Sign Wave-no-text.png" alt="">
+        <img src="assets/img/signwave-user.png" alt="">
         <h1>Sign Wave<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
@@ -61,7 +61,7 @@
 
     <div class="section-header">
       <h2>Kamus</h2>
-      <p>Selamat datang di kamus SignWave, tempat belajar penuh warna dan kegembiraan! Kamus ini memiliki tiga kategori utama yaitu huruf, angka, dan kosa kata. Setiap entri dilengkapi interpretasi visual menarik, contoh penggunaan jelas, dan panduan pengucapan mudah dipahami. Nikmati pengalaman belajar interaktif dan tingkatkan kemampuan bahasa isyarat Anda. Jelajahi keajaiban bahasa isyarat bersama SignWave!</p>
+      <p>Selamat datang di kamus Sign Wave, tempat belajar penuh warna dan kegembiraan! Kamus ini memiliki tiga kategori utama yaitu huruf, angka, dan kosa kata. Setiap entri dilengkapi interpretasi visual menarik, contoh penggunaan jelas, dan panduan pengucapan mudah dipahami. Nikmati pengalaman belajar interaktif dan tingkatkan kemampuan bahasa isyarat Anda. Jelajahi keajaiban bahasa isyarat bersama Sign Wave!</p>
     </div>
 
     <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
@@ -168,7 +168,7 @@
         <br><br>
       </a>
       <a href="{{ route('index') }}">
-      <img src="assets/img/signwave-no-text.png" alt="Logo" style="display:block; margin: 25px;" width=20%;>
+      <img src="assets/img/signwave-user.png" alt="Logo" style="display:block; margin: 25px;" width=20%;>
       </a>
     </div>
 

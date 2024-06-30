@@ -1,4 +1,6 @@
-@extends('layouts.admin.app')
+@extends('layouts.main')
+
+@section('title', 'Kelola Artikel - Tambah')
 
 @section('content')
 <main id="main" class="main">
@@ -7,7 +9,8 @@
     <h1>Tambah Artikel</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.artikel.index') }}">Artikel</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('artikel.index') }}">Artikel</a></li>
             <li class="breadcrumb-item active">Tambah</li>
         </ol>
     </nav>
@@ -34,7 +37,7 @@
     <h5 class="card-title">Tambah Artikel</h5>
 
     <!-- Vertical Form -->
-    <form class="row g-3" action="{{ route('admin.artikel.store') }}" method="POST">
+    <form class="row g-3" action="{{ route('artikel.store') }}" method="POST">
     @csrf
       <div class="col-12">
         <label for="judulArtikel" class="form-label">Judul Artikel</label>

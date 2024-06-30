@@ -1,13 +1,14 @@
-@extends('layouts.admin.app')
+@extends('layouts.main')
+
+@section('title', 'Kelola Artikel - Edit')
 
 @section('content')
-<main id="main" class="main">
-
     <div class="pagetitle">
         <h1>Edit Artikel</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('admin.artikel.index') }}">Artikel</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('artikel.index') }}">Artikel</a></li>
                 <li class="breadcrumb-item active">Edit</li>
             </ol>
         </nav>
@@ -31,7 +32,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Edit Artikel</h5>
 
-                    <form action="{{ route('admin.artikel.update', $artikel_signwave->id) }}" method="POST">
+                    <form action="{{ route('artikel.update', $artikel_signwave->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="col-md-12 mb-3">
@@ -56,6 +57,7 @@
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Ubah</button>
+                            <a href="{{ route('artikel.index') }}" class="btn btn-danger">Batal</a>
                         </div>
                     </form><!-- End floating Labels Form -->
 
@@ -63,6 +65,4 @@
             </div>
         </div>
     </section>
-
-</main><!-- End #main -->
 @endsection

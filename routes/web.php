@@ -25,8 +25,8 @@ Route::get('/tentangkami', function () {
 
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
-Route::get('/index', [ArtikelController::class, 'index'])->name('index');
-Route::get('/', [ArtikelController::class, 'index'])->name('index');
+Route::get('/index', [ArtikelController::class, 'indexView'])->name('index');
+Route::get('/', [ArtikelController::class, 'indexView'])->name('index');
 
 Route::get('/kamus-index', [KamusController::class, 'index'])->name('kamus-index');
 
@@ -58,12 +58,19 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/{username}/edit-user', [UserController::class, 'update'])->name('edit-user.update');
         Route::delete('/index-kelola-user/{username}', [UserController::class, 'destroy'])->name('index-kelola-user.destroy');
     // Admin Routes
-    Route::get('/latihan/index', [LatihanController::class, 'adminIndex'])->name('latihan.index');
+        Route::get('/latihan/index', [LatihanController::class, 'adminIndex'])->name('latihan.index');
         Route::get('/latihan/tambah', [LatihanController::class, 'create'])->name('latihan.create');
         Route::post('/latihan', [LatihanController::class, 'store'])->name('latihan.store');
         Route::get('/latihan/{id}/edit', [LatihanController::class, 'edit'])->name('latihan.edit');
         Route::put('/latihan/{id}', [LatihanController::class, 'update'])->name('latihan.update');
         Route::delete('/latihan/{id}', [LatihanController::class, 'destroy'])->name('latihan.destroy');
+
+    Route::get('artikel', [ArtikelController::class, 'index'])->name('artikel.index');
+    Route::get('artikel/tambah', [ArtikelController::class, 'tambah'])->name('artikel.tambah');
+    Route::post('artikel', [ArtikelController::class, 'store'])->name('artikel.store');
+    Route::get('artikel/{id}/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
+    Route::put('artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
+    Route::delete('artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
     });
 
     Route::middleware('role:user')->group(function () {

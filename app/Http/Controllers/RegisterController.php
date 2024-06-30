@@ -28,16 +28,18 @@ class RegisterController extends Controller
                 ->withInput();
         }
 
-        Akun::create([
+        $user = Akun::create([
             'nama' => $request->nama,
             'username' => $request->username,
             'password' => Hash::make($request->password),
             'role' => 'user',
         ]);
 
+        $user->assignRole('user');
+
         return redirect()->route('register')->with('success', 'Registrasi berhasil! Anda akan diarahkan ke halaman login.');
     }
-
 }
+
 
 ?>

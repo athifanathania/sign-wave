@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/Sign Wave-no-text.png" rel="icon">
+  <link href="assets/img/signwave-user.png" rel="icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,14 +35,14 @@
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="{{ route('index') }}" class="logo d-flex align-items-center">
-        <img src="assets/img/Sign Wave-no-text.png" alt="">
+        <img src="assets/img/signwave-user.png" alt="">
         <h1>Sign Wave<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index">Beranda</a></li>
           <li><a href="{{ route('kamus-index') }}">Kamus</a></li>
-          <li><a href="index#services">Artikel</a></li>
+          <li><a href="index#artikel">Artikel</a></li>
           <li><a href="index#feedback">Feedback</a></li>
           <li><a href="index#about">Tentang Kami</a></li>
           <li><a href="{{ route('login') }}"><span class="bi bi-box-arrow-in-right">&nbsp Masuk</span></a></li>
@@ -76,7 +76,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-layout-text-window-reverse"></i></div>
-              <h4 class="title"><a href="index#kamus" class="stretched-link">Kamus Bahasa</a></h4>
+              <h4 class="title"><a href="{{ route('kamus-index') }}" class="stretched-link">Kamus Bahasa</a></h4>
             </div>
           </div><!--End Icon Box -->
 
@@ -106,7 +106,7 @@
 
 
   <!-- Artikel Section -->
-        <section id="services" class="services sections-bg">
+        <section id="artikel" class="services sections-bg">
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
                     <h2>Artikel</h2>
@@ -215,7 +215,7 @@
             <div class="row gy-4 justify-content-center">
                 <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="member p-3">
-                        <img src="{{ asset('assets/img/dipa.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets/img/dipa.jpg') }}" class="img-fluid" alt="Anindya Diva Talitha">
                         <h4>Anindya Diva Thalita</h4>
                         <span>H1D022026</span>
                         <div class="social">
@@ -228,7 +228,7 @@
 
                 <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="member p-3">
-                        <img src="{{ asset('assets/img/tipa.JPG') }}" class="img-fluid" width=150>
+                        <img src="{{ asset('assets/img/tipa.jpg') }}" class="img-fluid" alt="Athifa Nathania">
                         <h4>Athifa Nathania</h4>
                         <span>H1D022031</span>
                         <div class="social">
@@ -241,7 +241,7 @@
 
                 <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="member p-3">
-                        <img src="{{ asset('assets/img/ebel.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets/img/ebel.jpg') }}" class="img-fluid" alt="Eka Belandini">
                         <h4>Eka Belandini</h4>
                         <span>H1D022002</span>
                         <div class="social">
@@ -269,7 +269,7 @@
         <br><br>
       </a>
       <a href="{{ route('index') }}">
-      <img src="assets/img/signwave-no-text.png" alt="Logo" style="display:block; margin: 25px;" width=20%;>
+      <img src="assets/img/signwave-user.png" alt="Logo" style="display:block; margin: 25px;" width=20%;>
       </a>
     </div>
 
@@ -284,8 +284,8 @@
     <div class="col-lg-2 col-6 footer-links ">
       <h4>Layanan Kami</h4>
       <ul>
-        <li><a href="index#kamus">Kamus Bahasa</a></li>
-        <li><a href="index#services">Artikel</a></li>
+        <li><a href="{{ route('kamus-index') }}">Kamus Bahasa</a></li>
+        <li><a href="index#artikel">Artikel</a></li>
         <li><a href="index#feedback">Feedback</a></li>
       </ul>
     </div>

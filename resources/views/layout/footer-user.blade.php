@@ -9,7 +9,7 @@
         <br><br>
       </a>
       <a href="{{ route('home-user') }}">
-      <img src="assets/img/signwave-no-text.png" alt="Logo" style="display:block; margin: 25px;" width=20%;>
+      <img src="assets/img/signwave-user.png" alt="Logo" style="display:block; margin: 25px;" width=20%;>
       </a>
     </div>
 

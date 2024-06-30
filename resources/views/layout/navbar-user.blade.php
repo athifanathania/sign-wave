@@ -9,15 +9,15 @@
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="{{ route('home-user') }}" class="logo d-flex align-items-center">
-        <img src="assets/img/signwave-no-text.png" alt="Logo">
+        <img src="assets/img/signwave-user.png" alt="Logo">
         <h1>Sign Wave<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="home-user">Beranda</a></li>
           <li><a class="{{ Request::routeIs('kamus-user') ? 'active' : '' }}" href="{{ route('kamus-user') }}">Kamus</a></li>
-          <li><a class="{{ Request::routeIs(['latihan', 'latihan.showQuestions', 'latihan.reviewAnswers', 'latihan.showResults']) ? 'active' : '' }}" href="{{ route('latihan') }}">Latihan</a></li>
-          <li><a href="home-user#services">Artikel</a></li>
+          <li><a class="{{ Request::routeIs(['latihan.showQuestions', 'latihan.reviewAnswers', 'latihan.showResults']) ? 'active' : '' }}" href="home-user#latihan">Latihan</a></li>
+          <li><a href="home-user#artikel">Artikel</a></li>
           <li><a href="home-user#feedback">Feedback</a></li>
           <li><a href="home-user#about">Tentang Kami</a></li>
           <li class="dropdown {{ Request::routeIs('profile-user') || Request::routeIs('profile-user.edit') ? 'active' : '' }}">

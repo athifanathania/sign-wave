@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/signwave-no-text.png" rel="icon">
+  <link href="assets/img/signwave-user.png" rel="icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/user/main.css" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
@@ -54,7 +55,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-layout-text-window-reverse"></i></div>
-              <h4 class="title"><a href="home-user#kamus" class="stretched-link">Kamus Bahasa</a></h4>
+              <h4 class="title"><a href="{{ route('kamus-user') }}" class="stretched-link">Kamus Bahasa</a></h4>
             </div>
           </div><!--End Icon Box -->
 
@@ -87,13 +88,33 @@
   </section>
   <!-- End Hero Section -->
 
+  <section id="latihan" class="latihan">
+    <div class="container position-relative">
+
+      <div class="row gy-7" data-aos="fade-in">
+        <div class="col-lg-8 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <br><br>
+          <h2>Selamat datang di Halaman Kuis Bahasa Isyarat untuk Pemula!</h2>
+          <p><br>Kami mengundang Anda untuk menguji pengetahuan dan kemampuan Anda dalam mengenali huruf, angka, dan kata-kata sehari-hari dalam Bahasa Isyarat Indonesia (BISINDO). Kuis ini dirancang dengan penuh tantangan dan interaktif, terdiri dari serangkaian pertanyaan yang mencakup berbagai aspek dasar dari Bahasa Isyarat.</p>
+
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="{{ route('latihan.showQuestions') }}" class="btn-get-started">Mulai Kuis</a>
+          </div>
+        </div>
+        <div class="col-lg-4 order-1 order-lg-2 latihan-img">
+          <img src="{{ asset('assets/img/kuis.jpg') }}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+
+    </div>
+</section><!-- End Latihan Section -->
   
   <!-- Artikel Section -->
-        <section id="services" class="services sections-bg">
+        <section id="artikel" class="services sections-bg">
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
                     <h2>Artikel</h2>
-                    <p>Selamat datang di artikel SignWave, tempat untuk mengeksplorasi beragam artikel yang mengangkat dunia bahasa isyarat secara mendalam dan menyenangkan! Temukan cerita inspiratif, tips praktis, dan berita terkini seputar bahasa isyarat yang akan membawa kita lebih dekat dengan komunitas ini. Ayo, mari jelajahi bersama dan tingkatkan pemahaman serta apresiasi terhadap keindahan bahasa isyarat!</p>
+                    <p>Selamat datang di artikel Sign Wave, tempat untuk mengeksplorasi beragam artikel yang mengangkat dunia bahasa isyarat secara mendalam dan menyenangkan! Temukan cerita inspiratif, tips praktis, dan berita terkini seputar bahasa isyarat yang akan membawa kita lebih dekat dengan komunitas ini. Ayo, mari jelajahi bersama dan tingkatkan pemahaman serta apresiasi terhadap keindahan bahasa isyarat!</p>
                 </div>
 
                 <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
@@ -197,21 +218,21 @@
 
             <div class="row gy-4 justify-content-center">
                 <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member p-3">
-                        <img src="{{ asset('assets/img/dipa.png') }}" class="img-fluid" alt="">
+                  <div class="member p-3">
+                        <img src="{{ asset('assets/img/dipa.jpg') }}" class="img-fluid" alt="Anindya Diva Talitha">
                         <h4>Anindya Diva Thalita</h4>
                         <span>H1D022026</span>
                         <div class="social">
-                            <a href="https://www.instagram.com/talithadivaaaa"><i class="bi bi-instagram"></i></a>
-                            <a href="https://id.linkedin.com/in/anindyadivatalitha"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://github.com/anindyadiva06"><i class="bi bi-github"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                            <a href=""><i class="bi bi-github"></i></a>
                         </div>
                     </div>
                 </div><!-- End Team Member -->
 
                 <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="member p-3">
-                        <img src="{{ asset('assets/img/tipa.JPG') }}" class="img-fluid" width=150>
+                        <img src="{{ asset('assets/img/tipa.jpg') }}" class="img-fluid" alt="Athifa Nathania">
                         <h4>Athifa Nathania</h4>
                         <span>H1D022031</span>
                         <div class="social">
@@ -224,7 +245,7 @@
 
                 <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="member p-3">
-                        <img src="{{ asset('assets/img/ebel.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets/img/ebel.jpg') }}" class="img-fluid" alt="Eka Belandini">
                         <h4>Eka Belandini</h4>
                         <span>H1D022002</span>
                         <div class="social">

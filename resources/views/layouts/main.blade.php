@@ -30,15 +30,14 @@
 </head>
 
 <body>
-    @include('partials.header')
-    @include('partials.sidebar')
+    @include('layout.navbar-admin')
     
     <main id="main" class="main">
         @yield('content')
         @yield('scripts')
     </main><!-- End #main -->
     
-    @include('partials.footer')
+    @include('layout.footer-admin')
     
     <!-- Vendor JS Files -->
     <script src="{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>

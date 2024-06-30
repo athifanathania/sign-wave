@@ -7,7 +7,7 @@
     <h1>Latihan</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
             <li class="breadcrumb-item"><a href="{{ route('latihan.index') }}">Latihan</a></li>
             <li class="breadcrumb-item active">Tambah Latihan</li>
         </ol>

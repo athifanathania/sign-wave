@@ -1,24 +1,35 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Http\Controllers\Controller;
-
+use App\Http\Controllers\ArtikelController;
 
 class ArtikelController extends Controller
 {
+    public function home() : View
+    {
+        $artikel_signwave = Artikel::all();
+        return view('home-user', compact('artikel_signwave'));
+    }
+
+    public function indexView(): View
+    {
+        $artikel_signwave = Artikel::all();
+        return view('index', compact('artikel_signwave'));
+    }
+    
     public function index() : View
     {
         $artikel_signwave = Artikel::all();
-        return view('admin.artikel.index', compact('artikel_signwave'));
+        return view('artikel.index', compact('artikel_signwave'));
     }
-    
+
     public function tambah() : View
     {
-        return view('admin.artikel.tambah');
+        return view('artikel.tambah');
     }
 
     public function store(Request $request)
@@ -41,7 +52,7 @@ class ArtikelController extends Controller
     public function edit($id) : View
     {
         $artikel_signwave = Artikel::findOrFail($id);
-        return view('admin.artikel.edit', compact('artikel_signwave'));
+        return view('artikel.edit', compact('artikel_signwave'));
     }
 
     public function update(Request $request, $id)
@@ -52,14 +63,13 @@ class ArtikelController extends Controller
             'link' => 'required|url',
         ]);
 
-       
+
         $artikel_signwave = Artikel::find($id);
         $artikel_signwave->judul_artikel = $request->judul_artikel;
         $artikel_signwave->konten = $request->konten;
         $artikel_signwave->link = $request->link;
         $artikel_signwave->save();
-
-        return redirect()->back()->with('success', 'Artikel berhasil diubah!');
+return redirect()->route('artikel.index')->with('success', 'Artikel berhasil diubah!');
     }
 
     public function destroy($id)

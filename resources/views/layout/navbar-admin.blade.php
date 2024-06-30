@@ -87,11 +87,9 @@
         <i class="bi bi-card-list"></i>
         <span>Kelola Latihan</span>
     </a>
-</li>
-
-      </li><!-- End Latihan Page Nav -->
+</li><!-- End Latihan Page Nav -->
       <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('kelola-artikel') ? 'active' : 'collapsed' }}" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->routeIs('artikel.index') ? 'active' : 'collapsed' }}" href="{{ route('artikel.index') }}">
           <i class="bi bi-journal-text"></i><span>Kelola Artikel</span>        
         </a>
       </li><!-- End Artikel Nav -->
@@ -126,6 +124,3 @@
     </ul>
 
   </aside><!-- End Sidebar-->
-
-
-  @yield('content')
