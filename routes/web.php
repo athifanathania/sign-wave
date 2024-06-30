@@ -91,16 +91,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('hasil', [LatihanController::class, 'showResults'])->name('latihan.showResults');
         Route::get('/latihan/review', [LatihanController::class, 'reviewAnswers'])->name('latihan.reviewAnswers');
     });
-    
-Route::get('/admin/artikel', [ArtikelController::class, 'index']); 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('artikel', [ArtikelController::class, 'index'])->name('artikel.index');
-    Route::get('artikel/tambah', [ArtikelController::class, 'tambah'])->name('artikel.tambah');
-    Route::post('artikel', [ArtikelController::class, 'store'])->name('artikel.store');
-    Route::get('artikel/{id}/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
-    Route::put('artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
-    Route::delete('artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
-});
 
 
 });
