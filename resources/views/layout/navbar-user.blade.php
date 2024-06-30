@@ -15,9 +15,9 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="home-user">Beranda</a></li>
-          <li><a href="home-user#kamus">Kamus</a></li>
+          <li><a class="{{ Request::routeIs('kamus-index') ? 'active' : '' }}" href="{{ route('kamus-index') }}">Kamus</a></li>
           <li><a href="home-user#latihan">Latihan</a></li>
-          <li><a href="home-user#artikel">Artikel</a></li>
+          <li><a href="home-user#services">Artikel</a></li>
           <li><a href="home-user#feedback">Feedback</a></li>
           <li><a href="home-user#about">Tentang Kami</a></li>
           <li class="dropdown {{ Request::routeIs('profile-user') || Request::routeIs('profile-user.edit') ? 'active' : '' }}">

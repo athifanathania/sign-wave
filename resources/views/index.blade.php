@@ -260,7 +260,7 @@
       <h4>Layanan Kami</h4>
       <ul>
         <li><a href="index#kamus">Kamus Bahasa</a></li>
-        <li><a href="index#artikel">Artikel</a></li>
+        <li><a href="index#services">Artikel</a></li>
         <li><a href="index#feedback">Feedback</a></li>
       </ul>
     </div>

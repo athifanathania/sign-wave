@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers;
 
 use App\Models\Kamus;
 use Illuminate\Http\Request;
@@ -13,8 +13,7 @@ class KamusController extends Controller
     public function index() : View
     {
         $kamus_signwave = Kamus::all();
-        $kamus_signwave->save();
-        return view('user.kamus.index', compact('kamus_signwave'));
+        return view('kamus-index', compact('kamus_signwave'));
     }
 }
 

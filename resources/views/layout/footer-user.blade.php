@@ -24,7 +24,7 @@
     <div class="col-lg-2 col-6 footer-links">
       <h4>Layanan Kami</h4>
       <ul>
-        <li><a href="home-user#kamus">Kamus Bahasa</a></li>
+        <li><a href="{{ route('kamus-index') }}">Kamus Bahasa</a></li>
         <li><a href="home-user#latihan">Latihan Kuis</a></li>
         <li><a href="home-user#artikel">Artikel</a></li>
         <li><a href="home-user#feedback">Feedback</a></li>

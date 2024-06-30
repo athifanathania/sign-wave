@@ -82,10 +82,13 @@
         </a>
       </li><!-- End Kamus Nav -->
       <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('kelola-latihan') ? 'active' : 'collapsed' }}" href="#">
-          <i class="bi bi-card-list"></i>
-          <span>Kelola Latihan</span>
-        </a>
+        <li class="nav-item">
+    <a class="nav-link {{ request()->routeIs('latihan.index') ? 'active' : 'collapsed' }}" href="{{ route('latihan.index') }}">
+        <i class="bi bi-card-list"></i>
+        <span>Kelola Latihan</span>
+    </a>
+</li>
+
       </li><!-- End Latihan Page Nav -->
       <li class="nav-item">
         <a class="nav-link {{ request()->routeIs('kelola-artikel') ? 'active' : 'collapsed' }}" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
