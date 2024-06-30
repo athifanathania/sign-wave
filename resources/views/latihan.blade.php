@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sign Wave - Akun Saya</title>
+  <title>Sign Wave - Latihan</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -26,6 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/user/main.css" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
@@ -47,7 +48,7 @@
           </div>
         </div>
         <div class="col-lg-4 order-1 order-lg-2 latihan-img">
-          <img src="{{ asset('assets_user/img/kuis.jpg') }}" class="img-fluid animated" alt="">
+          <img src="{{ asset('assets/img/kuis.jpg') }}" class="img-fluid animated" alt="">
         </div>
       </div>
 
