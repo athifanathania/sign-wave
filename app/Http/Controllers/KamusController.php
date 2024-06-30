@@ -10,6 +10,11 @@ use App\Http\Controllers\Controller;
 
 class KamusController extends Controller
 {
+    public function home() : View
+    {
+        $kamus_signwave = Kamus::all();
+        return view('kamus-user', compact('kamus_signwave'));
+    }
     public function index() : View
     {
         $kamus_signwave = Kamus::all();

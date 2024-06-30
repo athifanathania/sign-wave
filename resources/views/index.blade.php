@@ -41,8 +41,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index">Beranda</a></li>
-          <li><a href="index#kamus">Kamus</a></li>
-          <li><a href="index#artikel">Artikel</a></li>
+          <li><a href="{{ route('kamus-index') }}">Kamus</a></li>
+          <li><a href="index#services">Artikel</a></li>
           <li><a href="index#feedback">Feedback</a></li>
           <li><a href="index#about">Tentang Kami</a></li>
           <li><a href="{{ route('login') }}"><span class="bi bi-box-arrow-in-right">&nbsp Masuk</span></a></li>
@@ -105,6 +105,31 @@
   <main id="main">
 
 
+  <!-- Artikel Section -->
+        <section id="services" class="services sections-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>Artikel</h2>
+                    <p>Selamat datang di artikel SignWave, tempat untuk mengeksplorasi beragam artikel yang mengangkat dunia bahasa isyarat secara mendalam dan menyenangkan! Temukan cerita inspiratif, tips praktis, dan berita terkini seputar bahasa isyarat yang akan membawa kita lebih dekat dengan komunitas ini. Ayo, mari jelajahi bersama dan tingkatkan pemahaman serta apresiasi terhadap keindahan bahasa isyarat!</p>
+                </div>
+
+                <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+                    @foreach ($artikel_signwave as $artikel)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-newspaper"></i>
+                            </div>
+                            <h3>{{ $artikel->judul_artikel }}</h3>
+                            <p>{{ $artikel->konten }}</p>
+                            <a href="{{ $artikel->link }}" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        <!-- End Artikel Section -->
     <!-- ======= Feedback Section ======= -->
     <section id="feedback" class="contact">
       <div class="container" data-aos="fade-up">
@@ -244,7 +269,7 @@
         <br><br>
       </a>
       <a href="{{ route('index') }}">
-      <img src="assets/img/Sign Wave-no-text.png" alt="Logo" style="display:block; margin: 25px;" width=20%;>
+      <img src="assets/img/signwave-no-text.png" alt="Logo" style="display:block; margin: 25px;" width=20%;>
       </a>
     </div>
 

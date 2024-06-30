@@ -93,7 +93,7 @@ return [
             'expire' => 60,
             'throttle' => 60,
               'driver' => 'eloquent',
-        'model' => App\Models\Akun::class,
+                'model' => App\Models\Akun::class,
         ],
     ],
 

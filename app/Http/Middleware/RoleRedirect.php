@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class RoleRedirect
 {
@@ -17,21 +16,17 @@ class RoleRedirect
      */
     public function handle($request, Closure $next)
     {
-        Log::info('RoleRedirect middleware called');
-
         if (Auth::check()) {
             $user = Auth::user();
-            Log::info('User role:', ['role' => $user->role]);
 
-            if ($user->role == 'admin') {
-                Log::info('Redirecting to dashboard-admin');
+            if ($user->hasRole('admin')) {
                 return redirect()->route('dashboard-admin');
-            } else {
-                Log::info('Redirecting to home');
+            } elseif ($user->hasRole('user')) {
                 return redirect()->route('home-user');
             }
         }
 
+        // Default behavior if user is not authenticated or does not have a role
         return $next($request);
     }
 }

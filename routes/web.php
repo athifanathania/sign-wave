@@ -10,12 +10,7 @@ use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KamusController;
 
-
 Route::get('/', function () {
-    return view('index');
-})->name('index');
-
-Route::get('/index', function () {
     return view('index');
 })->name('index');
 
@@ -29,70 +24,65 @@ Route::get('/tentangkami', function () {
 
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
+Route::get('/index', [ArtikelController::class, 'index'])->name('index');
+
+Route::get('/kamus-index', [KamusController::class, 'index'])->name('kamus-index');
+
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/login', [LoginController::class, 'login'])->name('login.post');
     Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
-    Route::post('/register', [RegisterController::class, 'register']);
+    Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
 });
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-    Route::get('/dashboard-admin', function () {
-        return view('dashboard-admin');
-    })->name('dashboard-admin');
+    Route::middleware('role:admin')->group(function () {
+        Route::get('/dashboard-admin', function () {
+            return view('dashboard-admin');
+        })->name('dashboard-admin');
 
-    Route::get('/home-user', function () {
-        return view('home-user');
-    })->name('home-user');
+        Route::get('/profile-admin', [ProfileController::class, 'showAdminProfile'])->name('profile-admin');
+        Route::get('/edit-profile-admin', [ProfileController::class, 'editAdminProfile'])->name('profile-admin.edit');
+        Route::put('/edit-profile-admin', [ProfileController::class, 'updateAdminProfile'])->name('profile-admin.update');
 
-    Route::get('/profile-admin', [ProfileController::class, 'showAdminProfile'])->name('profile-admin');
-    Route::get('/edit-profile-admin', [ProfileController::class, 'editAdminProfile'])->name('profile-admin.edit');
-    Route::put('/edit-profile-admin', [ProfileController::class, 'updateAdminProfile'])->name('profile-admin.update');
-
-    Route::post('/change-password', [ProfileController::class, 'changePassword'])->name('change-password');
-
-    Route::get('/kelola-feedback', [FeedbackController::class, 'index'])->name('kelola-feedback');
-
-    Route::delete('/feedback/{id_feedback}', [FeedbackController::class, 'destroy'])->name('delete-feedback');
-    Route::post('/home-user', [FeedbackController::class, 'store'])->name('home-user.feedback');
-    Route::get('/kamus', [KamusController::class, 'index'])->name('home-user.kamus');
-    Route::get('/artikel', [ArtikelController::class, 'index'])->name('home-user.artikel');
-
-    Route::get('/index-kelola-user', [UserController::class, 'index'])->name('index-kelola-user');
-    Route::get('/create-user', [UserController::class, 'create'])->name('create-user');
-    Route::post('/create-user', [UserController::class, 'store'])->name('create-user.store');
-    Route::get('/{username}/edit-user', [UserController::class, 'edit'])->name('edit-user');
-    Route::put('/{username}/edit-user', [UserController::class, 'update'])->name('edit-user.update');
-    Route::delete('/index-kelola-user/{username}', [UserController::class, 'destroy'])->name('index-kelola-user.destroy');
-    
-    Route::get('/profile-user', [ProfileController::class, 'showUserProfile'])->name('profile-user');
-    Route::get('/edit-user-profile', [ProfileController::class, 'editUserProfile'])->name('profile-user.edit');
-    Route::put('/edit-user-profile', [ProfileController::class, 'updateUserProfile'])->name('profile-user.update');
-
-    // User Routes
-    Route::get('/latihan', [LatihanController::class, 'index'])->name('latihan.index');
-    Route::get('/latihan/soal', [LatihanController::class, 'showQuestions'])->name('latihan.showQuestions');
-    Route::post('/latihan/submit', [LatihanController::class, 'submitQuiz'])->name('latihan.submitQuiz');
-    Route::get('/latihan/hasil', [LatihanController::class, 'showResults'])->name('latihan.showResults');
-    Route::get('/latihan/review', [LatihanController::class, 'reviewAnswers'])->name('latihan.reviewAnswers');
-
-
+        Route::get('/kelola-feedback', [FeedbackController::class, 'index'])->name('kelola-feedback');
+        Route::delete('/feedback/{id_feedback}', [FeedbackController::class, 'destroy'])->name('delete-feedback');
+        Route::get('/index-kelola-user', [UserController::class, 'index'])->name('index-kelola-user');
+        Route::get('/create-user', [UserController::class, 'create'])->name('create-user');
+        Route::post('/create-user', [UserController::class, 'store'])->name('create-user.store');
+        Route::get('/{username}/edit-user', [UserController::class, 'edit'])->name('edit-user');
+        Route::put('/{username}/edit-user', [UserController::class, 'update'])->name('edit-user.update');
+        Route::delete('/index-kelola-user/{username}', [UserController::class, 'destroy'])->name('index-kelola-user.destroy');
     // Admin Routes
-    Route::get('/admin/latihan', [LatihanController::class, 'adminIndex'])->name('latihan.adminIndex');
-    Route::get('/admin/latihan/create', [LatihanController::class, 'create'])->name('latihan.create');
-    Route::post('/admin/latihan', [LatihanController::class, 'store'])->name('latihan.store');
-    Route::get('/admin/latihan/{id}/edit', [LatihanController::class, 'edit'])->name('latihan.edit');
-    Route::put('/admin/latihan/{id}', [LatihanController::class, 'update'])->name('latihan.update');
-    Route::delete('/admin/latihan/{id}', [LatihanController::class, 'destroy'])->name('latihan.destroy');
+        Route::get('/admin/latihan', [LatihanController::class, 'adminIndex'])->name('latihan.adminIndex');
+        Route::get('/admin/latihan/create', [LatihanController::class, 'create'])->name('latihan.create');
+        Route::post('/admin/latihan', [LatihanController::class, 'store'])->name('latihan.store');
+        Route::get('/admin/latihan/{id}/edit', [LatihanController::class, 'edit'])->name('latihan.edit');
+        Route::put('/admin/latihan/{id}', [LatihanController::class, 'update'])->name('latihan.update');
+        Route::delete('/admin/latihan/{id}', [LatihanController::class, 'destroy'])->name('latihan.destroy');
+    });
+
+    Route::middleware('role:user')->group(function () {
+        Route::get('/home-user', function () {
+            return view('home-user');
+        })->name('home-user');
+
+        Route::get('/profile-user', [ProfileController::class, 'showUserProfile'])->name('profile-user');
+        Route::get('/edit-user-profile', [ProfileController::class, 'editUserProfile'])->name('profile-user.edit');
+        Route::put('/edit-user-profile', [ProfileController::class, 'updateUserProfile'])->name('profile-user.update');
+        Route::post('/home-user', [FeedbackController::class, 'store'])->name('home-user.feedback');
+        Route::get('/home-user', [ArtikelController::class, 'home'])->name('home-user');
+        Route::get('/kamus-user', [KamusController::class, 'home'])->name('kamus-user');
+        // User Routes
+        Route::get('/latihan', [LatihanController::class, 'index'])->name('latihan.index');
+        Route::get('/latihan/soal', [LatihanController::class, 'showQuestions'])->name('latihan.showQuestions');
+        Route::post('/latihan/submit', [LatihanController::class, 'submitQuiz'])->name('latihan.submitQuiz');
+        Route::get('/latihan/hasil', [LatihanController::class, 'showResults'])->name('latihan.showResults');
+        Route::get('/latihan/review', [LatihanController::class, 'reviewAnswers'])->name('latihan.reviewAnswers');
+    });
 
 
-    Route::get('/home-user', [ArtikelController::class, 'index'])->name('home-user');
-    Route::get('/kamus-index', [KamusController::class, 'index'])->name('kamus-index');
-        
 });
-
-
-
 

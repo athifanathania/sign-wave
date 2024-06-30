@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Akun;
+use Spatie\Permission\Models\Role;
 
 class LoginController extends Controller
 {
@@ -20,12 +21,14 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             $request->session()->put('nama', $user->nama); // Menyimpan nama di session
-            $request->session()->put('role', $user->role); // Menyimpan peran di session
             $request->session()->put('username', $user->username);
 
-            if ($user->role == 'admin') {
+            // Menggunakan Spatie untuk role
+            if ($user->hasRole('admin')) {
+                $request->session()->put('role', 'admin');
                 return redirect()->route('dashboard-admin');
             } else {
+                $request->session()->put('role', 'user');
                 return redirect()->route('home-user');
             }
         }
@@ -44,5 +47,4 @@ class LoginController extends Controller
         return redirect('/login');
     }
 }
-
 ?>
