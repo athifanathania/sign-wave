@@ -72,7 +72,7 @@
             
             <!-- Latihan Card -->
             <div class="col-xxl-4 col-md-6">
-              <a href="#Latihan">
+              <a href="{{ route('latihan.index') }}">
               <div class="card info-card sales-card">
                 <div class="card-body">
                   <h5 class="card-title">Kelola Latihan <span>| Sign Wave</span></h5>

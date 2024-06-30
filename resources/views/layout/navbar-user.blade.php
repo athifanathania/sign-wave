@@ -16,7 +16,7 @@
         <ul>
           <li><a href="home-user">Beranda</a></li>
           <li><a class="{{ Request::routeIs('kamus-user') ? 'active' : '' }}" href="{{ route('kamus-user') }}">Kamus</a></li>
-          <li><a href="home-user#latihan">Latihan</a></li>
+          <li><a class="{{ Request::routeIs('latihan') ? 'active' : '' }}" href="{{ route('latihan') }}">Latihan</a></li>
           <li><a href="home-user#services">Artikel</a></li>
           <li><a href="home-user#feedback">Feedback</a></li>
           <li><a href="home-user#about">Tentang Kami</a></li>

@@ -56,16 +56,18 @@
                                     </td>
                                     <td>
                                         <div class="d-flex">
-                                            <a href="{{ route('latihan.edit', ['latihan' => $pertanyaan->id_pertanyaan]) }}" class="btn btn-warning btn-sm me-2 flex-fill">
+                                            <a href="{{ route('latihan.edit', ['id' => $pertanyaan->id_pertanyaan]) }}" class="btn btn-warning btn-sm me-2 flex-fill">
                                                 <i class="bi bi-pencil-square"></i> Edit
                                             </a>
-                                            <form action="{{ route('latihan.destroy', ['latihan' => $pertanyaan->id_pertanyaan]) }}" method="POST" style="display:inline;" class="flex-fill delete-form">
+                                            <form action="{{ route('latihan.destroy', ['id' => $pertanyaan->id_pertanyaan]) }}" method="POST" style="display:inline;" class="flex-fill delete-form">
                                                 @csrf
                                                 @method('DELETE')
+
                                                 <button type="submit" class="btn btn-danger btn-sm delete-button w-100">
                                                     <i class="bi bi-trash"></i> Hapus
                                                 </button>
                                             </form>
+
                                         </div>
                                     </td>
                                 </tr>
