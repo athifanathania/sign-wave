@@ -71,7 +71,23 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit-user-profile', [ProfileController::class, 'editUserProfile'])->name('profile-user.edit');
     Route::put('/edit-user-profile', [ProfileController::class, 'updateUserProfile'])->name('profile-user.update');
 
-    Route::resource('latihan', LatihanController::class);
+    // User Routes
+    Route::get('/latihan', [LatihanController::class, 'index'])->name('latihan.index');
+    Route::get('/latihan/soal', [LatihanController::class, 'showQuestions'])->name('latihan.showQuestions');
+    Route::post('/latihan/submit', [LatihanController::class, 'submitQuiz'])->name('latihan.submitQuiz');
+    Route::get('/latihan/hasil', [LatihanController::class, 'showResults'])->name('latihan.showResults');
+    Route::get('/latihan/review', [LatihanController::class, 'reviewAnswers'])->name('latihan.reviewAnswers');
+
+
+    // Admin Routes
+    Route::get('/admin/latihan', [LatihanController::class, 'adminIndex'])->name('latihan.adminIndex');
+    Route::get('/admin/latihan/create', [LatihanController::class, 'create'])->name('latihan.create');
+    Route::post('/admin/latihan', [LatihanController::class, 'store'])->name('latihan.store');
+    Route::get('/admin/latihan/{id}/edit', [LatihanController::class, 'edit'])->name('latihan.edit');
+    Route::put('/admin/latihan/{id}', [LatihanController::class, 'update'])->name('latihan.update');
+    Route::delete('/admin/latihan/{id}', [LatihanController::class, 'destroy'])->name('latihan.destroy');
+
+
     Route::get('/home-user', [ArtikelController::class, 'index'])->name('home-user');
     Route::get('/kamus-index', [KamusController::class, 'index'])->name('kamus-index');
         
