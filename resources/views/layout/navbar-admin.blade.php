@@ -77,19 +77,19 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('kelola-kamus') ? 'active' : 'collapsed' }}" href="#">
+        <a class="nav-link {{ request()->routeIs('kamus.index', 'kamus.edit', 'kamus.tambah') ? 'active' : 'collapsed' }}" href="{{ route('kamus.index') }}">
           <i class="bi bi-layout-text-window-reverse"></i><span>Kelola Kamus</span>
         </a>
       </li><!-- End Kamus Nav -->
       <li class="nav-item">
         <li class="nav-item">
-    <a class="nav-link {{ request()->routeIs('latihan.index') ? 'active' : 'collapsed' }}" href="{{ route('latihan.index') }}">
+    <a class="nav-link {{ request()->routeIs('latihan.index', 'latihan.edit', 'latihan.tambah') ? 'active' : 'collapsed' }}" href="{{ route('latihan.index') }}">
         <i class="bi bi-card-list"></i>
         <span>Kelola Latihan</span>
     </a>
 </li><!-- End Latihan Page Nav -->
       <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('artikel.index') ? 'active' : 'collapsed' }}" href="{{ route('artikel.index') }}">
+        <a class="nav-link {{ request()->routeIs('artikel.index', 'artikel.edit', 'artikel.tambah') ? 'active' : 'collapsed' }}" href="{{ route('artikel.index') }}">
           <i class="bi bi-journal-text"></i><span>Kelola Artikel</span>        
         </a>
       </li><!-- End Artikel Nav -->
@@ -110,7 +110,7 @@
         </a>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('index-kelola-user') ? 'active' : 'collapsed' }}" href="{{ route('index-kelola-user') }}">
+        <a class="nav-link {{ request()->routeIs('index-kelola-user', 'edit-user', 'create-user') ? 'active' : 'collapsed' }}" href="{{ route('index-kelola-user') }}">
           <i class="bi bi-person"></i>
           <span>Kelola User</span>
         </a>

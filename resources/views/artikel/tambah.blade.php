@@ -53,6 +53,7 @@
       </div>
       <div class="text-center">
         <button type="submit" class="btn btn-primary">Tambah</button>
+        <a href="{{ route('artikel.index') }}" class="btn btn-danger">Batal</a>
       </div>
     </form><!-- Vertical Form -->
   </div>

@@ -1,13 +1,15 @@
-@extends('layouts.admin.app')
+@extends('layouts.main')
+
+@section('title', 'Kelola Kamus - Tambah')
 
 @section('content')
-<main id="main" class="main">
 
 <div class="pagetitle">
     <h1>Tambah Kamus</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.kamus.index') }}">Kamus</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('kamus.index') }}">Kamus</a></li>
             <li class="breadcrumb-item active">Tambah</li>
         </ol>
     </nav>
@@ -34,7 +36,7 @@
             <h5 class="card-title">Tambah Kamus</h5>
 
             <!-- Vertical Form -->
-            <form class="row g-3" action="{{ route('admin.kamus.store') }}" method="POST" enctype="multipart/form-data">
+            <form class="row g-3" action="{{ route('kamus.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
               <div class="col-12">
                 <label for="katakamus" class="form-label">Kata</label>
@@ -50,12 +52,12 @@
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary">Tambah</button>
+                <a href="{{ route('kamus.index') }}" class="btn btn-danger">Batal</a>
               </div>
             </form><!-- Vertical Form -->
           </div>
          </div>
     </div>
 </section>
-
-</main><!-- End #main -->
 @endsection
+

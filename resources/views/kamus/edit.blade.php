@@ -1,13 +1,15 @@
-@extends('layouts.admin.app')
+@extends('layouts.main')
+
+@section('title', 'Kelola Kamus - Edit')
 
 @section('content')
-<main id="main" class="main">
 
     <div class="pagetitle">
         <h1>Edit Kamus</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('admin.kamus.index') }}">Kamus</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('kamus.index') }}">Kamus</a></li>
                 <li class="breadcrumb-item active">Edit</li>
             </ol>
         </nav>
@@ -31,7 +33,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Edit Kamus</h5>
 
-                    <form action="{{ route('admin.kamus.update', $kamus_signwave->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('kamus.update', $kamus_signwave->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="col-md-12 mb-3">
@@ -59,6 +61,7 @@
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Ubah</button>
+                            <a href="{{ route('kamus.index') }}" class="btn btn-danger">Batal</a>
                         </div>
                     </form><!-- End floating Labels Form -->
 
@@ -66,6 +69,4 @@
             </div>
         </div>
     </section>
-
-</main><!-- End #main -->
 @endsection

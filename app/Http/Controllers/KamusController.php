@@ -20,18 +20,18 @@ class KamusController extends Controller
         $kamus_signwave = Kamus::all();
         return view('kamus-index', compact('kamus_signwave'));
     }
-}
+
 
 //kamus admin
- public function index() : View
+    public function indexAdmin() : View
     {
         $kamus_signwave = Kamus::simplePaginate(20);
-        return view('admin.kamus.index', compact('kamus_signwave'));
+        return view('kamus.index', compact('kamus_signwave'));
     }
 
     public function tambah() : View
     {
-        return view('admin.kamus.tambah');
+        return view('kamus.tambah');
     }
 
     public function store(Request $request)
@@ -50,13 +50,13 @@ class KamusController extends Controller
         $kamus_signwave->gambar = $gambarPath;
         $kamus_signwave->save();
     
-        return redirect()->back()->with('success', 'Kamus berhasil ditambahkan!');
+        return redirect()->route('kamus.index')->with('success', 'Kamus berhasil ditambahkan!');
     }
 
     public function edit($id) : View
     {
         $kamus_signwave = Kamus::findOrFail($id);
-        return view('admin.kamus.edit', compact('kamus_signwave'));
+        return view('kamus.edit', compact('kamus_signwave'));
     }
 
     public function update(Request $request, $id)
@@ -82,7 +82,7 @@ class KamusController extends Controller
 
     $kamus_signwave->save();
 
-    return redirect()->back()->with('success', 'Kamus berhasil diubah!');
+    return redirect()->route('kamus.index')->with('success', 'Kamus berhasil diubah!');
     }
 
     public function destroy($id)

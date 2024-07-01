@@ -45,8 +45,7 @@ class ArtikelController extends Controller
     $artikel_signwave->konten = $request->konten;
     $artikel_signwave->link = $request->link;
     $artikel_signwave->save();
-
-    return redirect()->back()->with('success', 'Artikel berhasil ditambahkan!');
+    return redirect()->route('artikel.index')->with('success', 'Artikel berhasil ditambahkan!');
     }
 
     public function edit($id) : View
@@ -69,7 +68,7 @@ class ArtikelController extends Controller
         $artikel_signwave->konten = $request->konten;
         $artikel_signwave->link = $request->link;
         $artikel_signwave->save();
-return redirect()->route('artikel.index')->with('success', 'Artikel berhasil diubah!');
+        return redirect()->route('artikel.index')->with('success', 'Artikel berhasil diubah!');
     }
 
     public function destroy($id)
