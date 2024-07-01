@@ -25,7 +25,7 @@ class KamusController extends Controller
 //kamus admin
     public function indexAdmin() : View
     {
-        $kamus_signwave = Kamus::simplePaginate(20);
+        $kamus_signwave = Kamus::all();
         return view('kamus.index', compact('kamus_signwave'));
     }
 
@@ -98,8 +98,4 @@ class KamusController extends Controller
         return redirect()->back()->with('success', 'Kamus berhasil dihapus!');
     }
 }
-?>
-
-
-
 ?>

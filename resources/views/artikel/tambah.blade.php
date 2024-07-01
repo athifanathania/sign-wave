@@ -3,8 +3,6 @@
 @section('title', 'Kelola Artikel - Tambah')
 
 @section('content')
-<main id="main" class="main">
-
 <div class="pagetitle">
     <h1>Tambah Artikel</h1>
     <nav>
@@ -30,7 +28,7 @@
         </div>
         @endif
     
-<div class="col-lg-6">
+<div class="col-lg-12">
 
 <div class="card">
   <div class="card-body">
@@ -60,6 +58,4 @@
  </div>
 </div>
 </section>
-
-</main><!-- End #main -->
 @endsection

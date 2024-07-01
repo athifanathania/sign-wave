@@ -43,7 +43,7 @@
                             <tbody>
                                 @foreach($kamus_signwave as $index => $kamus)
                                 <tr>
-                                    <td>{{ ($kamus_signwave->currentPage() - 1) * $kamus_signwave->perPage() + $index + 1 }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $kamus->kata }}</td>
                                     <td>{{ Str::limit($kamus->deskripsi, 100, '...') }}</td>
                                     <td>
@@ -79,5 +79,32 @@
         </div>
     </div>
 </section>
-@endsection
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const deleteButtons = document.querySelectorAll('.delete-button');
+        
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const form = button.closest('form');
 
+                Swal.fire({
+                    title: 'Apakah data akan dihapus?',
+                    text: "Data yang dihapus tidak bisa dikembalikan!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Iya, hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>
+@endsection

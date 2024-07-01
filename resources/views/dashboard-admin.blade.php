@@ -53,7 +53,7 @@
           <div class="row">
           <!-- Kamus Card -->
             <div class="col-xxl-4 col-md-6">
-              <a href="#kamus">
+              <a href="{{ route('kamus.index') }}">
               <div class="card info-card sales-card">
                 <div class="card-body">
                   <h5 class="card-title">Kelola Kamus <span>| Sign Wave</span></h5>
