@@ -69,11 +69,6 @@
                         </table>
                     </div>
                     <!-- End Table with stripped rows -->
-                    <!-- Pagination links -->
-                    <div class="d-flex justify-content-center">
-                        {{ $kamus_signwave->links() }}
-                    </div>
-                    <!-- End Pagination links -->
                 </div>
             </div>
         </div>
