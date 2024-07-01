@@ -92,6 +92,15 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/latihan/review', [LatihanController::class, 'reviewAnswers'])->name('latihan.reviewAnswers');
     });
 
-
+//kamus admin
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('kamus', [KamusController::class, 'index'])->name('kamus.index');
+    Route::get('kamus/tambah', [KamusController::class, 'tambah'])->name('kamus.tambah');
+    Route::post('kamus', [KamusController::class, 'store'])->name('kamus.store');
+    Route::get('kamus/{id}/edit', [KamusController::class, 'edit'])->name('kamus.edit');
+    Route::put('kamus/{id}', [KamusController::class, 'update'])->name('kamus.update');
+    Route::delete('kamus/{id}', [KamusController::class, 'destroy'])->name('kamus.destroy');
+});
+    
 });
 
