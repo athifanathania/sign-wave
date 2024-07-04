@@ -91,7 +91,7 @@
 
             <!-- Artikel Card -->
             <div class="col-xxl-4 col-md-6">
-              <a href="#Artikel">
+              <a href="{{ route('artikel.index') }}">
               <div class="card info-card sales-card">
                 <div class="card-body">
                   <h5 class="card-title">Kelola Artikel <span>| Sign Wave</span></h5>
