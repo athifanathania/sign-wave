@@ -41,15 +41,24 @@ class KamusController extends Controller
             'deskripsi' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-    
-        $gambarPath = $request->file('gambar')->storeAs('assets/img/kamus', $request->file('gambar')->getClientOriginalName(), 'public');
-    
-        $kamus_signwave = new Kamus;
+
+        $filename = null;
+
+        $kamus_signwave = new Kamus();
+if ($request->hasFile('gambar')) {
+            if ($kamus_signwave->gambar && file_exists(public_path('assets/img/kamus/' . $kamus_signwave->gambar))) {
+                @unlink(public_path('assets/img/kamus/' . $kamus_signwave->gambar));
+            }
+
+            $file = $request->file('gambar');
+            $filename = $file->getClientOriginalName(); // Ensure unique filename
+            $file->move(public_path('assets/img/kamus/'), $filename);
+        }
         $kamus_signwave->kata = $request->kata;
         $kamus_signwave->deskripsi = $request->deskripsi;
-        $kamus_signwave->gambar = $gambarPath;
+        $kamus_signwave->gambar = $filename;
         $kamus_signwave->save();
-    
+
         return redirect()->route('kamus.index')->with('success', 'Kamus berhasil ditambahkan!');
     }
 
