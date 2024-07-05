@@ -38,15 +38,15 @@
                     @csrf
                     <div class="col-12">
                         <label for="judulArtikel" class="form-label">Judul Artikel</label>
-                        <input type="text" class="form-control" id="judulArtikel" name="judul_artikel">
+                        <input type="text" class="form-control" id="judulArtikel" name="judul_artikel" required>
                     </div>
                     <div class="col-12">
                         <label for="ringkasanArtikel" class="form-label">Ringkasan Artikel</label>
-                        <input type="text" class="form-control" id="ringkasanArtikel" name="konten">
+                        <input type="text" class="form-control" id="ringkasanArtikel" name="konten" required>
                     </div>
                     <div class="col-12">
                         <label for="tautanArtikel" class="form-label">Tautan Artikel</label>
-                        <input type="url" class="form-control" id="tautanArtikel" name="link">
+                        <input type="url" class="form-control" id="tautanArtikel" name="link" required>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Tambah</button>

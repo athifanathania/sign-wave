@@ -40,15 +40,15 @@
             @csrf
               <div class="col-12">
                 <label for="katakamus" class="form-label">Kata</label>
-                <input type="text" class="form-control" id="katakamus" name="kata">
+                <input type="text" class="form-control" id="katakamus" name="kata" required>
               </div>
               <div class="col-12">
                 <label for="deskripsikamus" class="form-label">Deskripsi</label>
-                <input type="text" class="form-control" id="deskripsikamus" name="deskripsi">
+                <input type="text" class="form-control" id="deskripsikamus" name="deskripsi" required>
               </div>
               <div class="col-12">
                 <label for="gambarkamus" class="form-label">Gambar</label>
-                <input type="file" class="form-control" id="gambarkamus" name="gambar">
+                <input type="file" class="form-control" id="gambarkamus" name="gambar" required>
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary">Tambah</button>
@@ -60,4 +60,3 @@
     </div>
 </section>
 @endsection
-
