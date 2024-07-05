@@ -32,7 +32,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Edit Artikel</h5>
 
-                    <form action="{{ route('artikel.update', $artikel_signwave->id) }}" method="POST">
+                    <form action="{{ route('artikel.update', $artikel_signwave->id) }}" method="POST" id="editArtikelForm">
                         @csrf
                         @method('PUT')
                         <div class="col-md-12 mb-3">
@@ -65,4 +65,25 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const editArtikelForm = document.getElementById('editArtikelForm');
+        const linkInput = document.getElementById('link');
+
+        editArtikelForm.addEventListener('submit', function(event) {
+            if (linkInput.value.length > 255) {
+                event.preventDefault();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Tautan artikel terlalu panjang, maksimal 255 karakter!',
+                });
+            }
+        });
+    });
+</script>
 @endsection

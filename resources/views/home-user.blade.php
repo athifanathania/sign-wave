@@ -37,16 +37,16 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
     <div class="container position-relative">
-      <div class="row gy-5" data-aos="fade-in">
-        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-          <h2><span>Sign Wave</span></h2>
-          <p>Platform <b>Sign Wave</b> adalah sebuah sistem berbasis web yang dirancang untuk membantu orang-orang dalam mempelajari dan berkomunikasi menggunakan Bahasa Isyarat Indonesia (BISINDO). Platform ini dirancang untuk memudahkan komunikasi antara orang yang mendengar (teman dengar) dan orang dengan keterbatasan pendengaran (teman tuli) melalui berbagai fitur interaktif yang mendukung pembelajaran Bahasa Isyarat.</p>
-        </div>
-        <div class="col-lg-5 order-1" style="margin-left:100px;">
-          <img src="assets/img/hero-img.png" class="img-fluid" alt="Sign Wave" data-aos="zoom-out" data-aos-delay="100" width="80%">
-        </div>
+    <div class="row d-flex align-items-center" data-aos="fade-in">
+      <div class="col-lg-6 order-1 d-flex flex-column justify-content-center text-center text-lg-start">
+        <h2><span>Sign Wave</span></h2>
+        <p>Platform <b>Sign Wave</b> adalah sebuah sistem berbasis web yang dirancang untuk membantu orang-orang dalam mempelajari dan berkomunikasi menggunakan Bahasa Isyarat Indonesia (BISINDO). Platform ini dirancang untuk memudahkan komunikasi antara orang yang mendengar (teman dengar) dan orang dengan keterbatasan pendengaran (teman tuli) melalui berbagai fitur interaktif yang mendukung pembelajaran Bahasa Isyarat.</p>
+      </div>
+      <div class="col-lg-6 order-2 text-center">
+        <img src="assets/img/hero-img.png" class="img-fluid" alt="Sign Wave" data-aos="zoom-out" data-aos-delay="100" width="80%">
       </div>
     </div>
+  </div>
 
     <div class="icon-boxes position-relative">
       <div class="container position-relative">

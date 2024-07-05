@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kamus;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 
 class KamusController extends Controller
@@ -82,11 +83,13 @@ if ($request->hasFile('gambar')) {
 
     if ($request->hasFile('gambar')) {
         if ($kamus_signwave->gambar) {
-            \File::delete(public_path('assets/img/kamus/' . $kamus_signwave->gambar));
+            File::delete(public_path('assets/img/kamus/' . $kamus_signwave->gambar));
         }
     
-        $gambarPath = $request->file('gambar')->store('assets/img/kamus', 'public');
-        $kamus_signwave->gambar = basename($gambarPath); 
+        $file = $request->file('gambar');
+        $filename = $file->getClientOriginalName(); // Ensure unique filename
+        $file->move(public_path('assets/img/kamus/'), $filename);
+        $kamus_signwave->gambar = $filename;
     }
 
     $kamus_signwave->save();
@@ -99,7 +102,7 @@ if ($request->hasFile('gambar')) {
         $kamus_signwave = Kamus::findOrFail($id);
 
         if ($kamus_signwave->gambar) {
-            \File::delete(public_path($kamus_signwave->gambar));
+            File::delete(public_path('assets/img/kamus/' . $kamus_signwave->gambar));
         }
 
         $kamus_signwave->delete();
@@ -108,3 +111,4 @@ if ($request->hasFile('gambar')) {
     }
 }
 ?>
+

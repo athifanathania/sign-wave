@@ -54,7 +54,7 @@
                                         <form action="{{ route('artikel.destroy', $artikel->id) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                            <button type="submit" class="btn btn-danger delete-button">Hapus</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -67,6 +67,7 @@
     </div>
   </div>
 </section>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
