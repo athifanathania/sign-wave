@@ -59,4 +59,4 @@ Purwokerto, Jawa Tengah - Indonesia
 
 ---
 
-© 2025 Sign Wave — All Rights Reserved
+© 2024 Sign Wave — All Rights Reserved
